@@ -19,12 +19,26 @@ class SalariedEmployeeTest {
     @Test
     void getDefault() {
         assertEquals(0f, salariedEmployee.getVacationDays());
-        assertEquals(0, salariedEmployee.getWorkDays());
     }
 
     @ParameterizedTest(name = "work {0} days, expect {1} vacation days")
     @CsvSource(textBlock = """
-            0,0f
+             0,0f
+             15,1f
+             30,2f
+             45,3f
+             60,4f
+             75,5f
+             90,6f
+            105,7f
+            120,8f
+            135,9f
+            150,10f
+            165,11f
+            180,12f
+            195,13f
+            210,14f
+            225,15f
             """
     )
     void workDays(int workDays, float expectedVacationDays) {

@@ -4,7 +4,6 @@ public interface IEmployee {
 
     float getVacationDays();
 
-    int getWorkDays();
 
     void work(int workDays);
 
