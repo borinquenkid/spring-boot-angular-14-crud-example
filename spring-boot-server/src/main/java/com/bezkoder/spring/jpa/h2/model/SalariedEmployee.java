@@ -4,7 +4,9 @@ public class SalariedEmployee implements IEmployee {
 
 
     private float vacationDays;
-    private float vacationDaysPerYear = 15f;
+    private static final float VACATION_DAYS_PER_YEAR = 15f;
+    public static final int MAX_WORK_DAYS_PER_YEAR = 260;
+
 
     public SalariedEmployee() {
 
@@ -19,7 +21,13 @@ public class SalariedEmployee implements IEmployee {
 
     @Override
     public void work(int workDays) {
-        vacationDays+= (workDays / vacationDaysPerYear);
+        if (workDays > MAX_WORK_DAYS_PER_YEAR) {
+            throw new TooMuchWorkException();
+        }
+        vacationDays+= (workDays / VACATION_DAYS_PER_YEAR);
+        if (vacationDays > VACATION_DAYS_PER_YEAR) {
+            vacationDays = VACATION_DAYS_PER_YEAR;
+        }
     }
 
     @Override
