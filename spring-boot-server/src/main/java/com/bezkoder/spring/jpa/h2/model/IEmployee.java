@@ -11,9 +11,11 @@ public interface IEmployee {
 
     float getVacationDaysPerYear();
 
+    float getVacationRate();
+
     default float calculateVacationDays(float currentVacationDays, int workDays) {
         float vacationDaysPerYear = getVacationDaysPerYear();
-        float vacationDays = currentVacationDays + workDays / vacationDaysPerYear;
+        float vacationDays = currentVacationDays + workDays * getVacationRate();
         if (vacationDays > vacationDaysPerYear) {
             vacationDays = vacationDaysPerYear;
         }

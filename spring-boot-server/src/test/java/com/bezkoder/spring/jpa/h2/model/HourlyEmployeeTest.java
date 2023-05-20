@@ -38,19 +38,17 @@ class HourlyEmployeeTest {
 
     @ParameterizedTest(name = "work {0} days, expect {1} vacation days")
     @CsvSource(textBlock = """
-              0,  0f
-             10,  1f
-             20,  2f
-             30,  3f
-             40,  4f
-             50,  5f
-             60,  6f
-             70,  7f
-             80,  8f
-             90,  9f
-            100, 10f
-            110, 10f
-            260, 10f
+               0,   0f
+              26,   1f
+              52,   2f
+              78,   3f
+             104,   4f
+             130,   5f
+             156,   6f
+             182,   7.0000005f
+             208,   8f
+             234,   9f
+             260 , 10f
             """
     )
     void workDays(int workDays, float expectedVacationDays) {

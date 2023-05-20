@@ -1,9 +1,11 @@
 package com.bezkoder.spring.jpa.h2.model;
 
-abstract class AEmployee implements  IEmployee{
+abstract class AEmployee implements IEmployee {
 
     protected float vacationDays;
     protected float vacationDaysPerYear;
+
+    protected float vacationRate;
 
     @Override
     public float getVacationDays() {
@@ -13,6 +15,10 @@ abstract class AEmployee implements  IEmployee{
     @Override
     public float getVacationDaysPerYear() {
         return vacationDaysPerYear;
+    }
+
+    public float getVacationRate() {
+        return vacationDaysPerYear / MAX_WORK_DAYS_PER_YEAR;
     }
 
     @Override
