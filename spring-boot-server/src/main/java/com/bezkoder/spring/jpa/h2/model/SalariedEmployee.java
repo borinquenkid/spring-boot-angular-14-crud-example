@@ -7,6 +7,8 @@ public class SalariedEmployee implements IEmployee {
     private static final float VACATION_DAYS_PER_YEAR = 15f;
     public static final int MAX_WORK_DAYS_PER_YEAR = 260;
 
+    public static final int MIN_WORK_DAYS_PER_YEAR = 0;
+
 
     public SalariedEmployee() {
 
@@ -23,6 +25,9 @@ public class SalariedEmployee implements IEmployee {
     public void work(int workDays) {
         if (workDays > MAX_WORK_DAYS_PER_YEAR) {
             throw new TooMuchWorkException();
+        }
+        if (workDays < MIN_WORK_DAYS_PER_YEAR) {
+            throw new NegativeWorkException();
         }
         vacationDays+= (workDays / VACATION_DAYS_PER_YEAR);
         if (vacationDays > VACATION_DAYS_PER_YEAR) {
