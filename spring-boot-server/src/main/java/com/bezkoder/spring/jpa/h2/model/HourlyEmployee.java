@@ -9,8 +9,5 @@ public class HourlyEmployee extends AEmployee {
     }
 
 
-    @Override
-    public void takeVacation(float vacationDays) {
 
-    }
 }

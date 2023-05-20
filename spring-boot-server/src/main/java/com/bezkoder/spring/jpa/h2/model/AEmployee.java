@@ -25,4 +25,12 @@ abstract class AEmployee implements IEmployee {
         validate(workDays);
         vacationDays = calculateVacationDays(getVacationDays(), workDays);
     }
+
+    @Override
+    public void takeVacation(float vacationDays) {
+        if(this.vacationDays < vacationDays) {
+            throw new NotEnoughVacactionDaysException();
+        }
+        this.vacationDays -= vacationDays;
+    }
 }

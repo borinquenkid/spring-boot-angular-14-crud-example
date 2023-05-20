@@ -8,9 +8,4 @@ public class SalariedEmployee extends AEmployee {
         vacationDaysPerYear = 15f;
     }
 
-
-    @Override
-    public void takeVacation(float vacationDays) {
-
-    }
 }

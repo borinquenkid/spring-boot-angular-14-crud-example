@@ -56,4 +56,18 @@ class HourlyEmployeeTest {
         assertEquals(expectedVacationDays, hourlyEmployee.getVacationDays());
     }
 
+    @Test
+    void valid_take_vacationDays() {
+        hourlyEmployee.work(26);
+        hourlyEmployee.takeVacation(1.0f);
+        assertEquals(0, hourlyEmployee.getVacationDays());
+    }
+
+    @Test
+    public void invalid_take_vacationDays() {
+        Exception exception = assertThrows(NotEnoughVacactionDaysException.class, () -> hourlyEmployee.takeVacation(1f));
+        assertEquals("You have not worked enough days", exception.getMessage());
+    }
+
+
 }

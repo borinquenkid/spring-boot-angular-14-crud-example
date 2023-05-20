@@ -50,4 +50,17 @@ class SalariedEmployeeTest {
         assertEquals(expectedVacationDays, salariedEmployee.getVacationDays());
     }
 
+    @Test
+    void valid_take_vacationDays() {
+        salariedEmployee.work(52);
+        salariedEmployee.takeVacation(3.0f);
+        assertEquals(0, salariedEmployee.getVacationDays());
+    }
+
+    @Test
+    public void invalid_take_vacationDays() {
+        Exception exception = assertThrows(NotEnoughVacactionDaysException.class, () -> salariedEmployee.takeVacation(1f));
+        assertEquals("You have not worked enough days", exception.getMessage());
+    }
+
 }
