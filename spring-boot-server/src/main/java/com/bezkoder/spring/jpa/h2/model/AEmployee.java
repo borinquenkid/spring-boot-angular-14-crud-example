@@ -5,7 +5,6 @@ abstract class AEmployee implements IEmployee {
     protected float vacationDays;
     protected float vacationDaysPerYear;
 
-    protected float vacationRate;
 
     @Override
     public float getVacationDays() {
