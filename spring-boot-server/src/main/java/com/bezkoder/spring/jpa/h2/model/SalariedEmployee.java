@@ -2,17 +2,12 @@ package com.bezkoder.spring.jpa.h2.model;
 
 public class SalariedEmployee implements IEmployee {
 
-
     private float vacationDays;
-    private static final float VACATION_DAYS_PER_YEAR = 15f;
-    public static final int MAX_WORK_DAYS_PER_YEAR = 260;
-
-    public static final int MIN_WORK_DAYS_PER_YEAR = 0;
-
+    private final float vacationDaysPerYear;
 
     public SalariedEmployee() {
-
         vacationDays = 0f;
+        vacationDaysPerYear = 15f;
     }
 
     @Override
@@ -20,20 +15,18 @@ public class SalariedEmployee implements IEmployee {
         return vacationDays;
     }
 
+    @Override
+    public float getVacationDaysPerYear() {
+        return vacationDaysPerYear;
+    }
+
 
     @Override
     public void work(int workDays) {
-        if (workDays > MAX_WORK_DAYS_PER_YEAR) {
-            throw new TooMuchWorkException();
-        }
-        if (workDays < MIN_WORK_DAYS_PER_YEAR) {
-            throw new NegativeWorkException();
-        }
-        vacationDays+= (workDays / VACATION_DAYS_PER_YEAR);
-        if (vacationDays > VACATION_DAYS_PER_YEAR) {
-            vacationDays = VACATION_DAYS_PER_YEAR;
-        }
+        validate(workDays);
+        vacationDays = calculateVacationDays(vacationDays, workDays);
     }
+
 
     @Override
     public void takeVacation(float vacationDays) {

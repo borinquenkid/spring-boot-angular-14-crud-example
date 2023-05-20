@@ -24,7 +24,7 @@ class SalariedEmployeeTest {
     @Test
     public void whenGreaterThanMaxDays_tooMuchException() {
         Exception exception = assertThrows(TooMuchWorkException.class, () -> {
-            salariedEmployee.work(SalariedEmployee.MAX_WORK_DAYS_PER_YEAR + 1);
+            salariedEmployee.work(IEmployee.MAX_WORK_DAYS_PER_YEAR + 1);
         });
 
         assertEquals("You are working too much", exception.getMessage());
@@ -33,7 +33,7 @@ class SalariedEmployeeTest {
     @Test
     public void whenLessThanZeroDays_tooLittleException() {
         Exception exception = assertThrows(NegativeWorkException.class, () -> {
-            salariedEmployee.work(SalariedEmployee.MIN_WORK_DAYS_PER_YEAR - 1);
+            salariedEmployee.work(IEmployee.MIN_WORK_DAYS_PER_YEAR - 1);
         });
 
         assertEquals("You can not work negative days", exception.getMessage());
