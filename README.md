@@ -1,7 +1,8 @@
-# This fork is to show how much FS Programming I can do
-# With minimal knowledge of Angular
-# Java units tests are working
-# JS are not, but most are
+# This fork is to show how much FS Programming I can do With minimal knowledge of Angular
+> Java units tests are working
+> JS are not, but most are
+> To see updates of Employees, must return to list view
+
 
 # Spring Boot + Angular 14 CRUD example
 
