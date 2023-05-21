@@ -14,7 +14,7 @@ class ManagerEmployeeTest {
 
     @BeforeEach
     void setup() {
-        managerEmployee = new ManagerEmployee();
+        managerEmployee = new ManagerEmployee("manager", 0);
     }
 
     @Test

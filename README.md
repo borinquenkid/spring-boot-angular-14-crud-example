@@ -1,3 +1,8 @@
+# This fork is to show how much FS Programming I can do
+# With minimal knowledge of Angular
+# Java units tests are working
+# JS are not, but most are
+
 # Spring Boot + Angular 14 CRUD example
 
 Full-stack Angular 14 + Spring Boot Tutorial CRUD Application in that:

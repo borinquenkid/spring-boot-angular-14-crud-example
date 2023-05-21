@@ -14,7 +14,7 @@ class HourlyEmployeeTest {
 
     @BeforeEach
     void setup() {
-        hourlyEmployee = new HourlyEmployee();
+        hourlyEmployee = new HourlyEmployee("hourly", 0);
     }
 
     @Test

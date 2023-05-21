@@ -5,6 +5,10 @@ public interface IEmployee {
     int MAX_WORK_DAYS_PER_YEAR = 260;
     int MIN_WORK_DAYS_PER_YEAR = 0;
 
+    int getId();
+
+    int getWorkDays();
+
     float getVacationDays();
 
     void work(int workDays);
@@ -12,6 +16,8 @@ public interface IEmployee {
     float getVacationDaysPerYear();
 
     float getVacationRate();
+
+    String getName();
 
     default float calculateVacationDays(float currentVacationDays, int workDays) {
         float vacationDaysPerYear = getVacationDaysPerYear();

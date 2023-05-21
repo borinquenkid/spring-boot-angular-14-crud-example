@@ -13,7 +13,7 @@ class SalariedEmployeeTest {
 
     @BeforeEach
     void setup() {
-        salariedEmployee = new SalariedEmployee();
+        salariedEmployee = new SalariedEmployee("salaried", 0);
     }
 
     @Test
